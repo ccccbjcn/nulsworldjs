@@ -22,7 +22,7 @@ export function private_key_to_public_key (prv) {
   return secp256k1.publicKeyCreate(prv)
 }
 
-export function public_key_to_hash (pub, { chain_id = 8964, address_type = 1 } = {}) {
+export function public_key_to_hash (pub, { chain_id = 1, address_type = 1 } = {}) {
   let sha = new shajs.sha256().update(pub).digest()
   let pubkeyHash = new RIPEMD160().update(sha).digest()
   let output = Buffer.allocUnsafe(3)
