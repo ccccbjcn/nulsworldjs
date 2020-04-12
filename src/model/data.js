@@ -44,7 +44,8 @@ export function hash_twice (buffer) {
 }
 
 export function hash_from_address (address) {
-  let hash = bs58.decode(address)
+  let addr = address.substring(4)
+  let hash = bs58.decode(addr)
   return hash.slice(0, hash.length - 1) //.toString('hex')
 }
 
